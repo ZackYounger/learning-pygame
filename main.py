@@ -18,18 +18,25 @@ clock = pygame.time.Clock()
 player = Player()
 level_manager = levelManager()
 
+gravity_strength = .8
+
 ## Game loop
 running = True
 while running:
-    clock.tick(FPS) 
+    clock.tick(FPS)
     for event in pygame.event.get():
         if event.type == pygame.QUIT:
             running = False
 
+    keys_pressed = pygame.key.get_pressed()
+    if keys_pressed[pygame.K_q]:
+        running = False
+
     screen.fill((0,0,0))
 
-    pygame.draw.rect(screen, (255,0,0), [100,100,100,100])
+    player.update(keys_pressed, gravity_strength)
+    player.draw(screen)
 
-    pygame.display.flip()       
+    pygame.display.flip()
 
 pygame.quit()
