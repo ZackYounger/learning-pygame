@@ -5,6 +5,7 @@ class levelManager :
     def __init__(self) :
         pass
 
+<<<<<<< HEAD
     
     def convertingToList(self, filename) : 
         self.level_data = []
@@ -36,3 +37,12 @@ class levelManager :
 
 
 
+=======
+    def TestList():
+        List = [[0, 1, 0], [1, 0, 1]]
+        for i in List :
+            for j in i :
+                if j == 0 :
+                    pass                
+    
+>>>>>>> 8704f8c6ece8453e07ceaab367b84e7a2c2ffcb2

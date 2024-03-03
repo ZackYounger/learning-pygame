@@ -7,6 +7,8 @@ WIDTH = 1000
 HEIGHT = 600
 FPS = 60
 
+block_size = 20
+
 ## initialize pygame and create window
 pygame.init()
 pygame.mixer.init()
