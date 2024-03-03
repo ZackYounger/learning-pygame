@@ -34,8 +34,8 @@ class Player:
             self.vel[1] = -self.jump_height
 
         #crude floor detection
-        if self.pos[1] > 500:
-            self.pos[1] = 500
+        if self.pos[1] > 400:
+            self.pos[1] = 400
             self.vel[1] = 0
             self.acc[1] = 0
 
