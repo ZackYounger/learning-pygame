@@ -12,7 +12,7 @@ class Player:
         self.vel = [0, 0]
         self.acc = [0, 0]
 
-        self.walk_speed = 3
+        self.walk_speed = 2
         self.jump_height = 10
 
         self.drag = 0.8
@@ -30,7 +30,7 @@ class Player:
             self.acc[0] = self.walk_speed
         if keys_pressed[self.controls['left']]:
             self.acc[0] = -self.walk_speed
-        if keys_pressed[self.controls['up']]:
+        if keys_pressed[self.controls['up']] and self.pos[1] >= 500:
             self.vel[1] = -self.jump_height
 
         #crude floor detection
