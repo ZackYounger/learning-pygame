@@ -27,11 +27,11 @@ class Player:
                          'left' : pygame.K_LEFT,
                          'right' : pygame.K_RIGHT}
         
-        self.hitbox = pygame.Rect(*self.pos, self.hitbox_width, self.hitbox_height)
+        self.hitbox = pygame.Rect(*self.pos, self.width, self.height)
 
     def update(self, keys_pressed, gravity_strength):
         #handle inputs
-        self.hitbox = pygame.Rect(*self.pos, self.hitbox_width, self.hitbox_height)
+        self.hitbox = pygame.Rect(*self.pos, self.width, self.height)
 
         self.acc = [0, gravity_strength]
 

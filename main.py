@@ -19,6 +19,7 @@ clock = pygame.time.Clock()
 
 player = Player()
 level_manager = levelManager()
+level_manager.convertingToList("levels/test_level.csv")
 
 gravity_strength = .8
 
@@ -38,6 +39,8 @@ while running:
 
     player.update(keys_pressed, gravity_strength)
     player.draw(screen)
+
+    level_manager.drawing()
 
     pygame.display.flip()
 
