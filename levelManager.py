@@ -2,16 +2,16 @@ import csv
 import pygame 
 
 class levelManager :
-    def __init__(self) :
-        pass
+    def __init__(self, block_size) :
+        self.level_data = []
+        self.block_size = block_size
 
     
     def convertingToList(self, filename) : 
-        self.level_data = []
         with open( filename, "r") as csvfile:
             csv_data = csv.reader(csvfile, delimiter=",")
             for row in csv_data:
-                self.level_data.append(row)
+                self.level_data.append([int(i) for i in row])
 
                
 
@@ -20,10 +20,11 @@ class levelManager :
         #Reading the height(i) and the width(j)
         #Provide x and y where to draw 
         
-        for i in range(len(self.level_data)) :
-            for j in range(len(self.level_data)) :
-                if self.level_data[i][j] == 0 :
-                    pygame.draw.rect(screen, (255, 255, 255) [i, j, 20, 20])
+        for y in range(len(self.level_data)) :
+            for x in range(len(self.level_data[0])) :
+                if self.level_data[y][x] == 0 :
+                    pygame.draw.rect(screen, (255, 255, 255), [x * self.block_size, y * self.block_size, self.block_size, self.block_size])
+    
 
     
 

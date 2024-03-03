@@ -7,7 +7,7 @@ WIDTH = 1000
 HEIGHT = 600
 FPS = 60
 
-block_size = 20
+block_size = 10
 
 ## initialize pygame and create window
 pygame.init()
@@ -18,7 +18,7 @@ clock = pygame.time.Clock()
 
 
 player = Player()
-level_manager = levelManager()
+level_manager = levelManager( block_size )
 level_manager.convertingToList("levels/test_level.csv")
 
 gravity_strength = .8
@@ -40,7 +40,7 @@ while running:
     player.update(keys_pressed, gravity_strength)
     player.draw(screen)
 
-    level_manager.drawing()
+    level_manager.drawing( screen )
 
     pygame.display.flip()
 

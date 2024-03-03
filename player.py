@@ -53,6 +53,7 @@ class Player:
             self.vel[1] = 0
             self.acc[1] = 0
 
+        """
         for block in input_blocks:
             if True: #should be checking that blocks are close enough to be processed
                 
@@ -69,14 +70,15 @@ class Player:
 
                 if self.hitbox.colliderect(block.right_hitbox) and self.vel[0] > 0:
                     self.vel[0] = 0
+                    """
 
 
     def draw(self, screen):
         #jank because rectangles draw from the top left
         pygame.draw.rect(screen, self.colour, [*subVec( self.pos, multVec(self.dimensions, 0.5)), *self.dimensions])
 
-        for block in input_blocks:
-            pygame.draw.rect(screen, (100,0,100), block)
+        #for block in input_blocks:
+        #    pygame.draw.rect(screen, (100,0,100), block)
 
 addVec = lambda a, b : [a[0]+b[0], a[1]+b[1]]
 subVec = lambda a, b : [a[0]+b[0], a[1]+b[1]]
