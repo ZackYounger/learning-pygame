@@ -16,5 +16,5 @@ class levelManager:
         for i in List :
             for j in i :
                 if j == 0 :
-                    
-        return 
+                    pass                
+    
